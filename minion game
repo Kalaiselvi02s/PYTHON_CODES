@@ -1,0 +1,17 @@
+#minion game
+s="ant"
+v=["a","e","i","o","u"]
+st=[]
+k=[]
+for i in range(len(s)):
+  if s[i] in v:
+    for j in range(i+1,len(s)+1):
+        st.append(s[i:j])
+  else:
+    for j in range(i+1,len(s)+1):
+        k.append(s[i:j])
+        
+if len(k)>len(st):
+  print("kelvin wins the game","with score:",len(k) )
+else:
+  print("stuart wins the game","with score:",len(st) )
