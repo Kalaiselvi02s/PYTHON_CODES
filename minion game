@@ -12,6 +12,8 @@ for i in range(len(s)):
         k.append(s[i:j])
         
 if len(k)>len(st):
-  print("kelvin wins the game","with score:",len(k) )
+  print("kelvin wins the game","with score:", len(k))
+elif len(k)<len(st):
+   print("stuart wins the game","with score:",len(s))
 else:
-  print("stuart wins the game","with score:",len(st) )
+   print("draw","with score:",len(s))
