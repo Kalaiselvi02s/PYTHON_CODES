@@ -1,0 +1,30 @@
+import random
+n=random.randint(1,11)
+
+print("enter the num:")
+p2n=int(input())
+mark=100
+if n==p2n:
+  print("wow!!! luck is your side!! your score: ",mark)
+  mark+=100
+else:
+  mark-=50 
+  print("are you  need another chance y or n:")
+  a=input()
+  if a=="y":
+    if n%2==0:
+      y="even num"
+    else:
+      y="odd number"
+      print("here is your clue:",y)
+      print("now!! againnnn guesss!!!!!")
+      p2=int(input())
+      if p2==n:
+          mark+=100
+          print("yes!!!luck is your side","your score:",mark)
+          
+      else:
+          mark-=50
+          print("oopss you lossed with score:",mark)
+  else:
+    print("ok bye bye!!",mark)
