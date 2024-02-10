@@ -1,0 +1,45 @@
+class Customer:
+    amount_balance=int(input("Enter your balance amount:"))
+    pin=int(input("enter your pin:"))
+    acc_no=int(input("enter acc_no:"))
+    def __init__(self):
+        
+        print("Hello Customer your acc number ",Customer.acc_no)
+    def withdraw(self,a):
+        p=int(input("enter pin"))
+        if p==Customer.pin:
+           if Customer.amount_balance-a>=1000: 
+              Customer.amount_balance-=a
+           else:
+               print("Withdrawal unsuccessful: Minimum balance requirement not met")
+           
+        
+    def check_balance(self):
+        p=int(input("enter pin"))
+        if p==Customer.pin:
+           print("balance",Customer.amount_balance)
+    def Deposite(self,a):
+        p=int(input("enter pin"))
+        if p==Customer.pin:
+           Customer.amount_balance+=a 
+        
+    
+        
+    def choice(self):
+        c=int(input("ENTER YOU CHOICE:\n1.DEPOSITE\n2.WITHDRAW\n3.CHECK BALANCE\n4.MINI STATEMENT\n"))
+        if c==1:
+           a=int(input("Enter amount:"))
+           Customer.Deposite(self,a) 
+        if c==2:
+           a=int(input("enter amount:"))
+           Customer.withdraw(self,a)
+        if c==3:
+           Customer.check_balance(self)
+        if c==4:
+            print("account number:",Customer.acc_no,"Balance:",Customer.amount_balance)
+        y=input("are you need next transaction(y/n):")
+        if y=="y":
+            Customer.choice(self)
+        
+an=Customer()
+an.choice()
