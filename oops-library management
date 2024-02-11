@@ -1,0 +1,36 @@
+class library:
+    b=["python programming"]
+   
+            
+    def addbooks(self,bname):
+          library.b.append(bname)
+    def lend(self,bname):
+          library.b.remove(bname)
+    def returnbook(self,bname):
+          library.b.append(bname)
+    def display(self):
+          print("BOOKS in our library are::")
+          for i in range(len(library.b)):
+                print(i+1,".",library.b[i])
+                 
+    def choice(self):
+        print("WELCOME!!!!")
+        c=int(input("1.ADD BOOKS\n2.DISPLAY BOOKS\n3.LEND BOOK\n4.RETURN BOOK\n5.EXIT\nENTER YOUR CHOICE: "))
+        if c==1:
+            bname=input("Enter book name::")
+            library.addbooks(self,bname)
+        if c==2:
+              library.display(self)
+        if c==3:
+              bname=input("Enter book name::")
+              library.lend(self,bname)
+        if c==4:
+              bname=input("Enter book name::")
+              library.returnbook(self,bname)
+        if c==5:
+              print("THANK YOU FOR VISITING OUR LIBRARY")
+        y=input("are you need to continue(y/n):")
+        if y=="y":
+            library.choice(self)
+n=library()
+n.choice()
